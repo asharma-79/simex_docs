@@ -122,14 +122,14 @@ Carsten Fortmann-Grote, Alexander Andreev, Richard Briggs,\\ Michael Bussmann,
 %
 \section{Introduction}
 The computer program \texttt{simex\_platform} \cite{simex_github} is a modular
-software environment for the simulation of experiments at advanced laser light
+software environment for the simulation of experiments at advanced light
 sources. Users can assemble a virtual experiment through the combination
 of suitable simulation codes for the various instrumental parts of the
 experiment: the light source (e.g. a synchrotron, an x-ray free
-electron laser), propagation of radiation from the source to the
+electron laser, laser), propagation of radiation from the source to the
 point of interaction with a sample or target, interaction of the light with the sample,
-propagation of the scattered and trasmitted light after the
-interaction, and detection. We have equipped \texttt{simex\_platform}
+propagation of the scattered and/or trasmitted light and particles, after the
+interaction, and photon and/or particle detection. We have equipped \texttt{simex\_platform}
 with a number of such codes and user interfaces to ease setup and execution of
 simulation runs. A lightweight abstraction mechanism and interface templates
 makes the integration of further simulation codes straightforward, so users can
@@ -147,7 +147,7 @@ the code for \texttt{simex\_platform} at
 projects for various simulation tasks, e.g. short-pulse laser matter interaction
 (\url{https://github.com/eucall-software/picongpu}) and coherent diffraction
 (\url{https://github.com/eucall-software/singfel}). The repository is
-also used for non-software collaborative projects, e.g. publication manuscripts
+also used for non-software collaborative projects, e.g. publication of manuscripts
 and presentations.
 %
 \subsection{Modular structure of virtual photon experiments and simulation
@@ -213,7 +213,7 @@ Start-to-end simulations in \texttt{simex\_platform} require that any two
 subsequent \textit{Calculators} employed in the simulation pipeline can
 communicate data amongst each other. The data source has to write the data in a
 format that the ensuing data sink can handle and interpret correctly. In
-\texttt{simex\_platform}, we chose the Hierarchical Data Format (hdf5) \cite{HDFGroup1997}
+\texttt{simex\_platform}, we choose the Hierarchical Data Format (hdf5) \cite{HDFGroup1997}
 as the underlying format for all simulation data files.  Data consistency in the
 workflow is realized by each \textit{Calculator} defining the names of hdf
 datasets and attributes that it requires to perform its calculation task and the
